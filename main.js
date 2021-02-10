@@ -83,11 +83,13 @@ for (const obj of tenAlbum.tracks) {
 
 // OBJECT.keys() / .values() / .entries()
 // TODO: log the keys of the tenAlbum object using Object.keys()
-
+console.log(Object.keys(tenAlbum))
 // TODO: log the values of the tenAlbum object Object.values()
-
+console.log(Object.values(tenAlbum))
 // TODO: log the entries of the tenAlbum object Object.entries()
-
+for (const [key, value] of Object.entries(tenAlbum)) {
+    console.log(`${key}: ${value}`);
+  }
 // TODO: iterate the tenAlbum object and log the key/value pairs to the console using each of the above Object methods:
 // .keys()
 // .values()
