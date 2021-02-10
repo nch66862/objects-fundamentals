@@ -100,22 +100,22 @@ for (const [key, value] of Object.entries(tenAlbum)) {
 // USING THE DATA FROM .setlists
 import { setlistsFromAPI } from "./setlists.js";
 // TODO: Log 'setlistsFromAPI' to the console
-
+console.log(setlistsFromAPI)
 // TODO: USING the 'setlistsFromAPI' data, find the event dated 18-08-2018 and store that event object in a variable named 'event'
-
+let event = setlistsFromAPI.setlist.find(event => event.eventDate === "18-08-2018")
+console.log('event: ', event);
 // TODO: log the 'event' object to the console
 
 // TODO: USING DOT OR BRACKET NOTATION AND STRING INTERPOLATION, create a string which includes the name of the band, the venue, and the date of the event and store it in a new variable clled "bandVenueDate"
 // this string should look something like "Pearl Jam - Wrigley Field - 18-08-2018"
-
+const bandVenueDate = `${event.artist.name} - ${event.venue.name} - ${event.eventDate}`
 // TODO: log the 'bandVenueDate' string to the console
-
+console.log('bandVenueDate: ', bandVenueDate);
 // TODO: Find the first set of songs of the 'event' object and store it in a variable named 'firstSet'
-
+const firstSet = event.sets.set[0]
 // TODO: USING ANY OF THE WAYS TO LOOP AND ACCESS OBJECT PROPERTIES - iterate the 'firstSet' array and log the name of each song to the console
-
+firstSet.song.map(song => console.log(`${song.name}`))
 // ! ADD AND COMMIT
-
 // BONUS IF YOU HAVE TIME...
 // Using only properties of the event object we've previously defined
 // TODO: Insert the bandVenueDate string into the innerHTML of the element with the id of "header" in index.html
